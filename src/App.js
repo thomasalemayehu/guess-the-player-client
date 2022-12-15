@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import AppBar from './components/AppBar';
+import GameArea from './components/GameArea';
+import SupportedLeagues from './components/SupportedLeagues';
 
 function App() {
+  const mainContainer = {
+    display: "flex",
+    height: "calc(100vh - 20px)",
+    width: "100%",
+    padding:"12px 20% 0 15%",
+    alignItems:'center',
+    gap:"220px"
+  };
+
+  useEffect(()=>{
+    console.log('Setting game session');
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+      <AppBar />
+        <section style={mainContainer}>
+          <SupportedLeagues />
+          <GameArea />
+        </section>
+      </>
     </div>
   );
 }
