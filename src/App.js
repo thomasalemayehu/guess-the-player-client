@@ -1,32 +1,26 @@
-import { useEffect } from 'react';
-import './App.css';
-import AppBar from './components/AppBar';
-import GameArea from './components/GameArea';
-import SupportedLeagues from './components/SupportedLeagues';
-
+import { useEffect } from "react";
+import "./styles/App.css";
+import AppBar from "./components/AppBar";
+import GameArea from "./components/GameArea";
+import SupportedLeagues from "./components/SupportedLeagues";
+import { guessingGameStore } from "./state/store";
+import { Provider } from "react-redux";
 function App() {
-  const mainContainer = {
-    display: "flex",
-    height: "calc(100vh - 20px)",
-    width: "100%",
-    padding:"12px 20% 0 15%",
-    alignItems:'center',
-    gap:"220px"
-  };
-
-  useEffect(()=>{
-    console.log('Setting game session');
-  },[]);
+  useEffect(() => {
+    console.log("Setting game session");
+  }, []);
 
   return (
     <div className="App">
-      <>
-      <AppBar />
-        <section style={mainContainer}>
-          <SupportedLeagues />
-          <GameArea />
-        </section>
-      </>
+      <Provider store={guessingGameStore}>
+        <>
+          <AppBar />
+          <section className="app__main__container">
+            <SupportedLeagues />
+            <GameArea />
+          </section>
+        </>
+      </Provider>
     </div>
   );
 }

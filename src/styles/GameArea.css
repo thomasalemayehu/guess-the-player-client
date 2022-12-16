@@ -1,0 +1,12 @@
+.game__area__container {
+  width: 600px;
+  height: 550px;
+  padding: 0 8%;
+}
+
+.game__area__guess__display {
+  overflow: auto;
+  height: calc(550px - 180px - 70px - 20px);
+  margin-bottom: 20px;
+  padding: 0 4%;
+}

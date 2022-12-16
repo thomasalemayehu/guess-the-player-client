@@ -1,0 +1,14 @@
+.main__area__container{
+    height: 180px;
+    background: white;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main__area__input{
+    height: 36px;
+    padding: 2px 4px;
+}

@@ -1,0 +1,36 @@
+.player__auto__complete__container{
+    padding: 4px 12px 4px 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player__auto__complete__country{
+    width: 30px;
+    height: 30px;
+}
+
+.player__auto__complete__name{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.55px;
+}
+
+.player__auto__complete__team{
+    font-size: 12px;
+}
+
+.player__auto__complete_position{
+    font-size: 8px;
+    letter-spacing: 0.55px;
+    background: rgba(196, 196, 196, 0.755);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}

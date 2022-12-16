@@ -1,11 +1,7 @@
 import React from "react";
-
+import "../styles/GuessReveal.css";
 const GuessReveal = ({ info }) => {
-  const revealSection = {
-    height: "55px",
-    marginTop: "12px",
-  };
-  return <div style={revealSection}>{info}</div>;
+  return <div className="reveal__area__container">{info}</div>;
 };
 
 export default GuessReveal;

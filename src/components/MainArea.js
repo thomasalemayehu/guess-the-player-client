@@ -1,69 +1,65 @@
-import React, { useRef, useState } from "react";
-import { useEffect } from "react";
+import React, { useState } from "react";
+
+import DatalistInput from "react-datalist-input";
+import "react-datalist-input/dist/styles.css";
+import PlayerAutoComplete from "./PlayerAutoComplete";
+import "../styles/MainArea.css";
+import { useDispatch, useSelector } from "react-redux";
+
+// actions
+import { saveAutoCompleteOptionsAction } from "../state/actions/autoComplete.actions";
+import {addNewGuessAction} from "../state/actions/guess.actions";
+
+// services
+import { getAutoCompleteOptions } from "../service/autoComplete.services";
+
 const MainArea = () => {
-  const [guessText, setGuessText] = useState("");
+  const [guessItem, setGuessItem] = useState({});
+  const dispatch = useDispatch();
 
+  const autoCompleteOptions = useSelector(
+    (state) => state.autoComplete.autoCompleteValues
+  );
   const onGuessTextChange = (e) => {
-    setGuessText(e.target.value);
-  };
-  const mainSection = {
-    height: "180px",
-    background: "white",
-    marginTop: "10px",
-    marginBottom: "60px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
+    if (e.target.value) {
+      getAutoCompleteOptions(e.target.value)
+        .then((response) => {
+          console.log(response.data);
+          const players = response.data.map((player) => ({
+            value: player.name,
+            team: player.team.logo,
+            position: player.position,
+            nationality: player.nationality,
+          }));
+
+          dispatch(saveAutoCompleteOptionsAction(players));
+        })
+        .catch((e) => {
+          dispatch(saveAutoCompleteOptionsAction([]));
+        });
+    } else {
+      dispatch(saveAutoCompleteOptionsAction([]));
+    }
   };
 
-  const inputStyle = {
-    height: "36px",
-    padding: "2px 4px",
-  };
-
-  const options = [
-    "Lionel Messi",
-    "Bruno Fernandes",
-    "Jadon Sancho",
-    "Marcus Rashford",
-    "Kevin De Bruyne",
-    "Kylian Mbappe",
-  ];
-
-  useEffect(() => {
-    console.log("Getting input options");
-  }, [guessText]);
+  const onGuessSelect = (item) =>{
+    setGuessItem({ ...item });
+    dispatch(addNewGuessAction(1));
+  }
 
   return (
-    <div style={mainSection}>
-      <div>Reveal Section</div>
-      <input
-        type="text"
-        style={inputStyle}
-        placeholder="Enter here"
-        value={guessText}
+    <div className="main__area__container">
+      <div>{guessItem.value}</div>
+      <DatalistInput
+        className="main__area__input"
+        placeholder="Chocolate"
         onChange={onGuessTextChange}
+        onSelect={onGuessSelect}
+        items={autoCompleteOptions.map((autoCompleteItem) => ({
+          ...autoCompleteItem,
+          node: <PlayerAutoComplete {...autoCompleteItem} />,
+        }))}
       />
-      <datalist id="programmingLanguages">
-        {options.map((lang) => (
-          <option
-            key={lang}
-            value={lang}
-            style={{
-              position: "absolute",
-              border: "1px solid #d4d4d4",
-              borderBottom: "none",
-              borderTop: "none",
-              zIndex: "99",
-              top: "100%",
-              left: "0",
-              right: "0",
-            }}
-          >
-            {lang}
-          </option>
-        ))}
-      </datalist>
     </div>
   );
 };

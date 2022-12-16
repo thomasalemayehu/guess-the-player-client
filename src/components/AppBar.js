@@ -1,11 +1,8 @@
 import React from "react";
-
+import '../styles/AppBar.css'
 const AppBar = () => {
-  const mainStyle = {
-    width: "100%",
-    height: "20px",
-  };
-  return <div style={mainStyle}>AppBar</div>;
+ 
+  return <div className="app__bar__container">AppBar</div>;
 };
 
 export default AppBar;
