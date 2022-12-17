@@ -1,3 +1,10 @@
+const newGameSessionAction = (sessionId) => {
+  return {
+    type: "guess/newGameSession",
+    payload: sessionId,
+  };
+};
+
 const addNewGuessAction = (guess) => {
   return {
     type: "guess/addNewGuess",
@@ -5,4 +12,11 @@ const addNewGuessAction = (guess) => {
   };
 };
 
-export { addNewGuessAction };
+const clearGuessAction = () => {
+  return {
+    type: "guess/clearGuesses",
+    payload: [],
+  };
+};
+
+export { addNewGuessAction, newGameSessionAction, clearGuessAction };

@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 100;
 }
 
 .player__auto__complete__country{
@@ -11,9 +12,9 @@
 }
 
 .player__auto__complete__name{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-    letter-spacing: 0.55px;
+    letter-spacing: 1px;
 }
 
 .player__auto__complete__team{
@@ -23,7 +24,7 @@
 .player__auto__complete_position{
     font-size: 8px;
     letter-spacing: 0.55px;
-    background: rgba(196, 196, 196, 0.755);
+    background: rgba(196, 196, 196, 0.659);
     width: 30px;
     height: 30px;
     border-radius: 50%;

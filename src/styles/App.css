@@ -9,6 +9,8 @@ body {
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
+  letter-spacing: 0.55px;
+    font-family: 'Permanent Marker', cursive;
 }
 
 @keyframes gradient {
@@ -33,7 +35,22 @@ body {
   display: flex;
   height: calc(100vh - 20px);
   width: 100%;
-  padding: 12px 20% 0 15%;
   align-items: center;
-  gap: 220px;
+  justify-content: center;
+}
+
+.correct__guess {
+  background-color: #22c55e;
+}
+
+.incorrect__guess {
+  background-color: #7f8b9b;
+}
+
+img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }

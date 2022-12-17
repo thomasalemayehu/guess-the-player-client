@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SupportedLeagues = () => {
-  return (
-    <div>SupportedLeagues</div>
-  )
-}
+  return <div>SupportedLeagues</div>;
+};
 
-export default SupportedLeagues
+export default SupportedLeagues;

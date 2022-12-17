@@ -1,0 +1,16 @@
+.text__guess__circle {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  letter-spacing: 0.85px;
+  font-weight: 600;
+  color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+

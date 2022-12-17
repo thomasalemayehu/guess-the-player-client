@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/PlayerAutoComplete.css";
+import { API_IMAGE_BASE_URL } from "../CONSTANTS";
 const PlayerAutoComplete = ({ value, team, position, nationality }) => {
   return (
     <div className="player__auto__complete__container">
@@ -8,7 +9,7 @@ const PlayerAutoComplete = ({ value, team, position, nationality }) => {
         <div>
           <img
             className="player__auto__complete__country"
-            src={`http://localhost:5000/${team}`}
+            src={`${API_IMAGE_BASE_URL}/${team}`}
             alt={team}
           />
         </div>

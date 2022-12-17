@@ -1,24 +1,24 @@
-import { useEffect } from "react";
 import "./styles/App.css";
 import AppBar from "./components/AppBar";
 import GameArea from "./components/GameArea";
-import SupportedLeagues from "./components/SupportedLeagues";
+// import SupportedLeagues from "./components/SupportedLeagues";
 import { guessingGameStore } from "./state/store";
 import { Provider } from "react-redux";
-function App() {
-  useEffect(() => {
-    console.log("Setting game session");
-  }, []);
 
+function App() {
   return (
     <div className="App">
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+      </style>
       <Provider store={guessingGameStore}>
         <>
-          <AppBar />
           <section className="app__main__container">
-            <SupportedLeagues />
+            {/* <SupportedLeagues /> */}
             <GameArea />
           </section>
+          <AppBar />
         </>
       </Provider>
     </div>

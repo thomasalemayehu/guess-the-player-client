@@ -1,7 +1,18 @@
 .game__area__container {
-  width: 600px;
-  height: 550px;
-  padding: 0 8%;
+  width: 700px;
+  height: 600px;
+  padding: 2% 8%;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.game__area__not__started {
+  display: grid;
+  place-items: center;
 }
 
 .game__area__guess__display {
@@ -9,4 +20,31 @@
   height: calc(550px - 180px - 70px - 20px);
   margin-bottom: 20px;
   padding: 0 4%;
+}
+
+.start__new__game__button {
+  outline: none;
+  border: none;
+  color: white;
+  padding: 8px 30px;
+  background-color: #23a6d5;
+  font-family: "Permanent Marker", cursive;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.game__session__live__indicator {
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: rgb(249, 243, 243);
+  margin-bottom: 20px;
+  font-family: "Permanent Marker", cursive;
 }
