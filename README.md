@@ -38,15 +38,15 @@ A web based game that allows users to guess football players based on given hint
 
 2.  Pull and Run the server
 
-    # Link : https://github.com/thomasalemayehu/guess-the-player-api
+    ### Link : https://github.com/thomasalemayehu/guess-the-player-api
 
 3.  Populate Database with Data
 
 4.  Configure Paths on React App
 
-    # add API_IMAGE_BASE_URL to CONSTANTS.js in the React App
+    ### add API_IMAGE_BASE_URL to CONSTANTS.js in the React App
 
-    # add API_BASE_URL to CONSTANTS.js in the React App
+    ### add API_BASE_URL to CONSTANTS.js in the React App
 
 5.  Run Project
 
